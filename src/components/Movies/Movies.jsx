@@ -4,7 +4,7 @@ import './Movies.css';
 import { useSelector } from 'react-redux';
 
 function Movies() {
-    let { arr } = useSelector(
+    let { arr,searchClicked } = useSelector(
         function (a) {
             return a;
         }
@@ -15,7 +15,7 @@ function Movies() {
                 <li className="movies__item" key={movie.imdbID}>
                     <MovieItem {...movie} />
                 </li>
-            )) : "Axtardığınıza uyğun heç bir nəticə tapılmadı"}
+            )) : <h1 className={searchClicked? "visibleRes":"hiddenRes"}>Axtardığınıza uyğun heç bir nəticə tapılmadı</h1>}
         </ul>
     );
 

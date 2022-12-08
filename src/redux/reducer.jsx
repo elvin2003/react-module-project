@@ -1,7 +1,8 @@
 let obj = {
   arr: [],
   inputValue: "",
-  favArr: []
+  favArr: [],
+  searchClicked: false
 }
 
 function reducer(state = obj, action) {
@@ -35,6 +36,11 @@ function reducer(state = obj, action) {
         ...state,
         inputValue: "",
         arr: []
+      }
+    case 'searchClick':
+      return state = {
+        ...state,
+        searchClicked: action.load
       }
     case 'delete':
       let arr = state.favArr.filter(

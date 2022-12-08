@@ -25,6 +25,10 @@ function SearchBox() {
         })
     }
     let searchBoxSubmitHandler = (e) => {
+        dispatch({
+            type: 'searchClick',
+            load: true
+        })
         e.preventDefault();
         async function fetchData() {
             let response = await fetch(`https://www.omdbapi.com/?apikey=d81407e8&s=` + inputValue)
